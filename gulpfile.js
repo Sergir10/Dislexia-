@@ -9,7 +9,7 @@
 var fs = require('fs');
 var gulp = require('gulp');
 var connect = require('gulp-connect');
-var conf = require('./conf');
+var conf = require('gulp/conf');
 
 
 /**
