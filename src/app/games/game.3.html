@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Contando Sílabas</h1>
+    <p>A continuación encontrarás unas palabras divididas por sílabas, debes leer e indicar cuántas sílabas hay.</p>
+  </div>
+
+  <form name="countForm" ng-submit="vm.actions.checkAnswer()" novalidate>
+    <div class="col-md-4" ng-repeat="word in vm.words">
+      <div class="thumbnail" style="height: auto" ng-class="vm.valid[$index] ? 'success-field' : ''">
+        <div style="height: 200px;" class="text-center">
+          <img ng-src="assets/images/contandoSilabas/{{vm.images[$index]}}.png" alt="{{word}}.png"
+               style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+        </div>
+        <div class="caption">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-9">
+                <h4>{{word}}</h4>
+              </div>
+              <div class="col-md-3" ng-class="innerForm.input.$invalid && countForm.$submitted ? 'error-field': ''">
+                <ng-form name="innerForm">
+                  <h4>
+                    <input type="number" style="width: 100%" ng-model="vm.numberWord[$index]" name="input" required>
+                  </h4>
+                </ng-form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-success btn-lg btn-block space-button" type="submit">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

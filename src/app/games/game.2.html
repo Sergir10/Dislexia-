@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Encuentra la diferencia</h1>
+    <p>A continuación encontrarás dos palabras similares en las cuales solo cambia una letra, debes identificar cual es
+      la letra que cambia</p>
+  </div>
+
+  <form name="findForm" ng-submit="vm.actions.checkAnswer()" novalidate>
+    <div class="col-sm-6 col-md-3" ng-repeat="word in vm.words">
+      <div class="thumbnail" style="height: auto" ng-class="vm.valid[$index] ? 'success-field' : ''">
+        <div style="height: 200px;" class="text-center">
+          <img ng-src="assets/images/gameTwo/{{word}}.png" alt="{{word}}.png"
+               style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+        </div>
+        <div class="caption">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="text-center" style="text-transform: capitalize">
+                <div class="col-md-6">
+                  <h4>{{word}}</h4>
+                </div>
+                <div class="col-md-6">
+                  <h4>{{vm.wrongWords[$index]}}</h4>
+                </div>
+              </div>
+            </div>
+            <ng-form name="innerForm">
+              <div class="row">
+                <div class="col-md-7">
+                  <label for="one">Cambia:</label>
+                  <input type="text" id="one" style="max-width: 40%; text-align: center" ng-model="vm.word[$index].one"
+                         name="wordOne" ng-class="innerForm.wordOne.$invalid && findForm.$submitted ? 'error-field': ''"
+                         required>
+                </div>
+                <div class="col-md-5">
+                  <label for="two">Por:</label>
+                  <input type="text" id="two" style="max-width: 50%; text-align: center" ng-model="vm.word[$index].two"
+                         name="wordTwo" ng-class="innerForm.wordTwo.$invalid && findForm.$submitted ? 'error-field': ''"
+                         required>
+                </div>
+              </div>
+            </ng-form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-success btn-lg btn-block space-button" type="submit">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

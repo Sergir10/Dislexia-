@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Sílabas en común</h1>
+    <p>A continuación te vas a encontrar con dos palabras, debes leerlas e indicar cuál es la sílaba que tienen en
+      común.</p>
+  </div>
+
+  <form name="countForm" ng-submit="vm.actions.checkAnswer()" novalidate>
+    <div class="col-md-4" ng-repeat="word in vm.words">
+      <div class="thumbnail" style="height: auto" ng-class="vm.valid[$index] ? 'success-field' : ''">
+        <div style="height: 200px;" class="text-center">
+          <img ng-src="assets/images/silabasComun/{{vm.images[$index]}}.png" alt="{{vm.images[$index]}}.png"
+               style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+        </div>
+        <div class="caption">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="text-center">
+                <div class="col-md-4">
+                  <h4>{{word.one}}</h4>
+                </div>
+                <div class="col-md-4">
+                  <h4>{{word.two}}</h4>
+                </div>
+                <div class="col-md-4">
+                  <ng-form name="innerForm">
+                    <h4><input type="text" style="max-width: 100%" ng-model="vm.word[$index]" name="word" required
+                               ng-class="innerForm.word.$invalid && countForm.$submitted ? 'error-field': ''"></h4>
+                  </ng-form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-success btn-lg btn-block space-button" type="submit">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

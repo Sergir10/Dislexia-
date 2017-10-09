@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Contando Palabras</h1>
+    <p>A continuación encontrarás diferentes frases, debes leerlas e indicar cuántas palabras tiene la frase.</p>
+  </div>
+
+  <form name="countForm" ng-submit="vm.actions.checkAnswer()" novalidate>
+    <div class="col-md-4" ng-repeat="sentence in vm.data">
+      <div class="thumbnail" style="height: auto" ng-class="vm.valid[$index] ? 'success-field' : ''">
+        <div style="height: 200px;" class="text-center">
+          <img ng-src="assets/images/contarPalabras/{{vm.images[$index]}}.png" alt="{{vm.images[$index]}}.png"
+               style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+        </div>
+        <div class="caption">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="text-center">
+                <p>{{sentence}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-offset-4 col-md-4"
+                   ng-class="innerForm.count.$invalid && countForm.$submitted ? 'error-field': ''">
+                <ng-form name="innerForm">
+                  <input type="number" style="width: 100%" ng-model="vm.countWord[$index]" name="count" required>
+                </ng-form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-success btn-lg btn-block space-button" type="submit">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

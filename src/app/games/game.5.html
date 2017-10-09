@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="page-header">
+    <h1>¿Qué sílaba falta?</h1>
+    <p>A continuación encontrarás una palabra incompleta, debes escribir la sílaba que falta.</p>
+  </div>
+
+  <div class="col-sm-6 col-md-4" ng-repeat="word in vm.wrongWords">
+    <div class="thumbnail" style="height: auto">
+      <div style="height: 200px;" class="text-center">
+        <img ng-src="assets/images/gameFive/{{vm.words[$index]}}.png" alt="{{word}}.png"
+             style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+      </div>
+      <div class="caption">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6" style="height: 142px; display: table">
+              <h4 style="display: table-cell; vertical-align: middle">{{word}}</h4>
+            </div>
+            <div class="col-md-6">
+              <span ng-repeat="sug in vm.suggestion[$index]">
+                <h4><button class="btn btn-block"
+                            ng-click="vm.actions.check($parent.$index, $index)"
+                            ng-class="vm.valid[$parent.$index][$index] ? 'btn-success' : 'btn-default'">{{sug}}</button></h4>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

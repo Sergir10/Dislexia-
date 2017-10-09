@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Ordena las sílabas</h1>
+    <p>A continuación encontrarás las sílabas en desorden de una palabra, debes organizarlas y descubrir qué palabra
+      es.</p>
+  </div>
+
+  <form name="orderForm" ng-submit="vm.actions.checkAnswer()" novalidate>
+    <div class="col-md-4" ng-repeat="word in vm.wrongWords">
+      <div class="thumbnail" style="height: auto" ng-class="vm.valid[$index] ? 'success-field' : ''">
+        <div style="height: 200px;" class="text-center">
+          <img ng-src="assets/images/sortWord/{{vm.images[$index]}}.png" alt="{{vm.images[$index]}}.png"
+               style="display:block; max-height: 100%; max-width: 100%; margin: auto">
+        </div>
+        <div class="caption">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>{{word}}</h4>
+              </div>
+              <div class="col-md-6" ng-class="innerForm.order.$invalid && orderForm.$submitted ? 'error-field': ''">
+                <ng-form name="innerForm">
+                  <h4>
+                    <input type="text" style="width: 100%" ng-model="vm.orderWords[$index]" name="order" required>
+                  </h4>
+                </ng-form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-success btn-lg btn-block space-button" type="submit">Verificar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
