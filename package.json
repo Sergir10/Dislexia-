@@ -29,13 +29,7 @@
     "gulp-sourcemaps": "~1.6.0",
     "gulp-less": "~3.0.3",
     "gulp-angular-filesort": "~1.1.1",
-    "main-bower-files": "~2.9.0"
-  },
-  "scripts": {
-    "test": "gulp test",
-    "postinstall": "./node_modules/bower/bin/bower install"
-  },
-  "devDependencies": {
+    "main-bower-files": "~2.9.0",
     "estraverse": "~4.1.0",
     "wiredep": "~2.2.2",
     "karma": "~0.13.10",
@@ -51,6 +45,12 @@
     "http-proxy-middleware": "~0.9.0",
     "chalk": "~1.1.1",
     "uglify-save-license": "~0.4.1"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "devDependencies": {
   },
   "engines": {
     "node": ">=0.10.0"
