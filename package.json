@@ -6,7 +6,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
