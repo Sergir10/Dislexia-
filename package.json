@@ -47,7 +47,7 @@
     "uglify-save-license": "~0.4.1"
   },
   "scripts": {
-    "postinstall": "gulp serve"
+    "postinstall": "npm install && bower install"
   },
   "devDependencies": {
   },
