@@ -16,7 +16,7 @@
     vm.images = ['1', '2', '3', '4', '5', '6', '7', '8'];
     vm.words = [
       {one: 'Caracol', two: 'Colmena', three: 'col'},
-      {one: 'Montaña', two: 'Araña', three: 'aña'},
+      {one: 'Montaña', two: 'Araña', three: 'ña'},
       {one: 'Pollo', two: 'Zapote', three: 'po'},
       {one: 'Pelota', two: 'Arequipe', three: 'pe'},
       {one: 'Pocillo', two: 'Castillo', three: 'illo'},
