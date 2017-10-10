@@ -8,7 +8,7 @@
 
 var fs = require('fs');
 var gulp = require('gulp');
-var connect = require('gulp-connect');
+// var connect = require('gulp-connect');
 
 /**
  *  This will load all js or coffee files in the gulp directory
@@ -29,10 +29,10 @@ gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
 
-gulp.task('serveprod', function () {
+/*gulp.task('serveprod', function () {
   connect.server({
     root: ['./dist/'],
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
-});
+});*/
